@@ -184,7 +184,7 @@ class Trainer:
         
 
     def epoch_process(self, epoch, loader):
-        if (epoch >= self.args.training.sample_checkpoint and epoch % self.args.training.sample_rate == 0) or (epoch in self.args.training.sample_some): # 训练一定epoch之后，每个隔一定轮数，进行采样测试
+        if (epoch >= self.args.training.sample_checkpoint and epoch % self.args.training.sample_rate == 0) or (epoch in self.args.training.sample_some): 
             
             states = [
                     self.model.state_dict(),
@@ -276,7 +276,7 @@ class Trainer:
         self.train_end2(epoch, val_loader)
 
     def epoch_process2(self, epoch, loader):
-        if epoch > 0 : # 训练一定epoch之后，每个隔一定轮数，进行采样测试
+        if epoch > n
             acc = self.evaluate(loader)
             if acc > self.best_acc:
                 self.logger.info(f'save best: {acc}')
@@ -331,8 +331,7 @@ class Trainer:
         groundtruth = []
         name_list = []
         e = Evaluation(self.logger, metrics=self.args.evaluation.metrics)
-        # save = f'predict/{self.args.name}'
-        save = f'weight_tmp/predict/{self.args.name}'
+        save = f'predict/{self.args.name}'
         os.makedirs(save, exist_ok=True)
         for batch in loader:
             if isinstance(batch, dict):
