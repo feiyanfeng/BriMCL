@@ -1,0 +1,11 @@
+optimizer: 'Adam'
+lr: 1e-4
+weight_decay: 0.00
+beta1: 0.9
+
+amsgrad: False
+eps: 1e-8
+lr_schedule: False
+min_lr: 0.0  # used when lr_schedule
+
+#  grad_clip: 1.0, 梯度裁剪？

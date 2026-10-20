@@ -1,0 +1,27 @@
+device: ~ # 与 cfg.device 一致
+diffusion: 
+  beta_schedule: 'linear'
+  beta_start: 0.0001
+  beta_end: 0.02
+
+  timesteps: 1000
+  max_var: 1.0
+  eta: 1.0
+  skip_sample: True # 测试时用的 这里用不着
+  sample_step: 10 # 测试时用的 这里用不着
+  loss_type: l1  # {'l1', 'l2'}
+  objective: grad  # {'grad', 'noise', 'ysubx', 'x0'}
+
+  var_scale: 1
+  t_in_model: True
+
+  device: ~ # 与 cfg.device 一致
+
+contrastive_margin: 1.0
+model:
+  target: models.model.Unet4
+  params:
+    base_channels: 64
+    input_channels: 1
+    unet_rate: [2,4,4,8]
+    n_clin_var: 1536 # 768*2=1536 for 语言编码， 7*2=14 for 仅使用临床变量

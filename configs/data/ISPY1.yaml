@@ -1,0 +1,24 @@
+
+target: tools.data.data.dataset
+params: 
+  data_name: ISPY1 # 保存训练时数据信息时会用到
+  root: /root/ffy/data/4090/ISPY/2025.06classify/clip_resize_image_128T1noClip
+  clinical_root: /root/ffy/data/4090/ISPY/2025.06classify/clinical_information_embedding.pkl
+  train_list: ~ # 路径 而不是文件名 示例：data/ISPY1/aaa.txt
+  test_list: ~
+
+  same_as: ~ # data/ISPY1/list/20250707/fold1
+  # 或直接 20250707 ，默认为data/{data.name}/{data.same_as}
+
+  fold: ~ # 1
+  fold_root: data/ISPY1/list/20250707
+
+  train_batch_size: 1
+  test_batch_size: 2
+  num_workers: 0
+
+  train_name: ~ # data.name
+  tag: train
+
+## 优先级：train_list/test_list > fold > same_as
+## 目前使用：fold （更便捷）

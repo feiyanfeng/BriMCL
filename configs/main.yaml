@@ -1,0 +1,37 @@
+defaults:
+  - _self_
+  - data: ISPY1.yaml
+  - model: main_model.yaml
+  - training: default.yaml
+  - optim: default.yaml
+  # - test: default.yaml
+
+name: '???'  # 当值为 '???'时，代表并没有这个参数，需要主动传入
+mode: 'train'
+device: ~  # ~ 代表None
+# note: model.params.device的实际值与这里的一致
+
+random: 0  # 0 (random a number, print and use); -1 (no random); or a number
+
+load: False
+
+test:
+  # batch_size: ~ # in data
+  num_workers: 0
+  save_path: 'predict'
+
+  
+  type: 'default'
+
+evaluation:
+  metrics: all  # ['acc', 'auc', 'precision', 'f1', 'recall']
+
+
+log:
+  name: ~
+
+
+email: True
+
+# ~ 代表None
+# ??? 代表必须传入

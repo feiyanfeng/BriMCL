@@ -1,0 +1,19 @@
+name: BrownianBridge
+view: False
+ema: True
+ema_rate: 0.9999
+stage: 3
+
+target: models.BrownianBridgeModel.stage3
+params: 
+  device: ~ # 与 cfg.device 一致
+
+  model:
+    target: models.model.Unet5
+    params:
+      base_channels: 64
+      input_channels: 1
+      unet_rate: [2,4,4,8]
+      n_clin_var: 1536 # 768*2=1536 for 语言编码， 7*2=14 for 仅使用临床变量
+
+save_last: True

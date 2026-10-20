@@ -1,0 +1,13 @@
+defaults:
+  - _self_
+  - params: default.yaml
+  
+name: BrownianBridge
+view: False
+ema: True
+ema_rate: 0.9999
+stage: 2
+
+target: models.BrownianBridgeModel.BrownianBridgeModel
+# params.model.target: models.model.Unet4  # 不确定是否报错
+save_last: True 

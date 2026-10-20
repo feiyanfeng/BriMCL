@@ -1,0 +1,13 @@
+# batch_size: 1 # in data
+epochs: 500
+# num_workers: 0 # in data
+
+warmup_epochs: 40 # Decay the learning rate with half-cycle cosine after warmup
+
+sample_checkpoint: 260 
+sample_rate: 20
+sample_some: []
+
+weigth_path: 'weights'
+
+accumulate_grad_batches: 1
